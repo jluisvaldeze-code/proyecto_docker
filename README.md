@@ -8,6 +8,7 @@ En este directorio se tiene:
     
 ![Miniatura del video](https://img.youtube.com/vi/FfnR6aghLgY/0.jpg)](https://www.youtube.com/watch?v=FfnR6aghLgY)
 
-![Miniatura del video](https://img.youtube.com/vi/TxkIn2FhSYg/0.jpg)]
+![Miniatura del video](https://img.youtube.com/vi/TxkIn2FhSYg/0.jpg)](https://www.youtube.com/watch?v=TxkIn2FhSYg)
+
 
 
