@@ -1,0 +1,33 @@
+# Use the official Debian base image
+FROM python:3.12-bookworm
+
+#RUN  python3 -m pip install --upgrade pip
+#RUN sed -i 's/stable\/updates/stable-security\/updates/' /etc/apt/sources.list
+
+RUN echo 'deb http://deb.debian.org/debian bullseye main' >> /etc/apt/sources.list
+RUN echo 'deb http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware' >> /etc/apt/sources.list
+RUN echo 'deb http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware' >> /etc/apt/sources.list
+RUN echo 'deb http://deb.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware' >> /etc/apt/sources.list
+
+RUN apt update && apt list --upgradable
+
+RUN apt install -y iputils-ping nano
+
+WORKDIR /app
+
+COPY . /app
+
+RUN python3 -m venv /app/vnv
+
+RUN . /app/vnv/bin/activate
+
+RUN pip install --upgrade pip
+
+RUN pip install -r requirements.txt
+
+RUN mkdir ~/.kaggle
+
+RUN mv /app/src/kaggle.json ~/.kaggle/
+
+RUN python /app/src/financial.py
+

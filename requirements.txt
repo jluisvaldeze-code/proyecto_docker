@@ -1,0 +1,6 @@
+numpy
+pandas
+kaggle
+psycopg2-binary
+sqlalchemy
+iptools
